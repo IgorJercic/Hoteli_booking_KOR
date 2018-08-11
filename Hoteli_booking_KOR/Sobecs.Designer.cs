@@ -36,14 +36,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label_id = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox_Hotel = new System.Windows.Forms.ComboBox();
+            this.comboBox_TipSobe = new System.Windows.Forms.ComboBox();
+            this.textBox_BrojSobe = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button_hotelUnos = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox_BrojSobe = new System.Windows.Forms.TextBox();
-            this.comboBox_TipSobe = new System.Windows.Forms.ComboBox();
-            this.comboBox_Hotel = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1_editHotel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -128,6 +128,41 @@
             this.panel1.Size = new System.Drawing.Size(295, 258);
             this.panel1.TabIndex = 5;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(35, 146);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Hotel";
+            // 
+            // comboBox_Hotel
+            // 
+            this.comboBox_Hotel.FormattingEnabled = true;
+            this.comboBox_Hotel.Location = new System.Drawing.Point(93, 143);
+            this.comboBox_Hotel.Name = "comboBox_Hotel";
+            this.comboBox_Hotel.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_Hotel.TabIndex = 6;
+          //  this.comboBox_Hotel.SelectedIndexChanged += new System.EventHandler(this.comboBox_Hotel_SelectedIndexChanged);
+            this.comboBox_Hotel.Click += new System.EventHandler(this.comboBox_Hotel_Click);
+            // 
+            // comboBox_TipSobe
+            // 
+            this.comboBox_TipSobe.FormattingEnabled = true;
+            this.comboBox_TipSobe.Location = new System.Drawing.Point(93, 101);
+            this.comboBox_TipSobe.Name = "comboBox_TipSobe";
+            this.comboBox_TipSobe.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_TipSobe.TabIndex = 5;
+            this.comboBox_TipSobe.SelectedIndexChanged += new System.EventHandler(this.comboBox_TipSobe_SelectedIndexChanged);
+            // 
+            // textBox_BrojSobe
+            // 
+            this.textBox_BrojSobe.Location = new System.Drawing.Point(94, 51);
+            this.textBox_BrojSobe.Name = "textBox_BrojSobe";
+            this.textBox_BrojSobe.Size = new System.Drawing.Size(92, 20);
+            this.textBox_BrojSobe.TabIndex = 4;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -163,38 +198,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(635, 230);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // textBox_BrojSobe
-            // 
-            this.textBox_BrojSobe.Location = new System.Drawing.Point(94, 51);
-            this.textBox_BrojSobe.Name = "textBox_BrojSobe";
-            this.textBox_BrojSobe.Size = new System.Drawing.Size(92, 20);
-            this.textBox_BrojSobe.TabIndex = 4;
-            // 
-            // comboBox_TipSobe
-            // 
-            this.comboBox_TipSobe.FormattingEnabled = true;
-            this.comboBox_TipSobe.Location = new System.Drawing.Point(93, 101);
-            this.comboBox_TipSobe.Name = "comboBox_TipSobe";
-            this.comboBox_TipSobe.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_TipSobe.TabIndex = 5;
-            // 
-            // comboBox_Hotel
-            // 
-            this.comboBox_Hotel.FormattingEnabled = true;
-            this.comboBox_Hotel.Location = new System.Drawing.Point(93, 143);
-            this.comboBox_Hotel.Name = "comboBox_Hotel";
-            this.comboBox_Hotel.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_Hotel.TabIndex = 6;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 146);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Hotel";
             // 
             // Sobecs
             // 

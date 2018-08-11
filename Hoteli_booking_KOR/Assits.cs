@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Sql;
-using System.Data.SqlClient;
+
 
 using DatabaseLogic;
 using System.Collections;
@@ -27,7 +27,11 @@ namespace Hoteli_booking_KOR
         }
 
 
-        public void Tip()
+
+
+
+
+        public Assits()
         {
 
             TipSobe = new ArrayList();
@@ -38,10 +42,8 @@ namespace Hoteli_booking_KOR
         }
 
 
-        public Assits()
-        {
-            Tip();
-        }
+
+
 
 
 
