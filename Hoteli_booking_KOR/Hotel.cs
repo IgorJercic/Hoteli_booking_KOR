@@ -16,6 +16,7 @@ namespace Hoteli_booking_KOR
 
         HotelContext _context = new HotelContext();
         HotelC _hotel = new HotelC();
+        Assits _ass = new Assits();
        
 
         public Hotel()
@@ -46,8 +47,19 @@ namespace Hoteli_booking_KOR
                 _hotel.Naziv = textBoxNazivHotel.Text;
                 _hotel.Adresa = textBoxAdresa.Text;
 
-                _context.NewHotel(_hotel);
-                LoadGrid();
+                if (_ass.CheckHotelDuplicate(_hotel.Naziv, _hotel.Adresa) == 0)
+                {
+                    //nije duplikat
+                    _context.NewHotel(_hotel);
+                    LoadGrid();
+                    MessageBox.Show("Unjeli ste hotel!");
+                }
+
+                else
+                {
+                    MessageBox.Show("Unašate dupli hotel po nazivu ili adresi");
+                }
+
 
             }
 
@@ -62,18 +74,6 @@ namespace Hoteli_booking_KOR
         }
 
 
-        //private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        //{
-        //    ////ovo radi
-        //    //DataGridViewRow rowID = this.dataGridView1.SelectedRows[0];
-        //    //panel1_editHotel.Show();
-
-        //    //int IDHotel = Convert.ToInt32(rowID.Cells["ID"].Value);
-        //    //label_id.Text = Convert.ToInt16(rowID.Cells["ID"].Value).ToString();
-        //    //textBoxEdit_nazivHotel.Text = rowID.Cells["naziv"].Value.ToString();
-        //    //textBoxEdit_AdresaHotel.Text = rowID.Cells["adresa"].Value.ToString();
-
-        //}
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -92,13 +92,12 @@ namespace Hoteli_booking_KOR
         {
             if(label_id.Text != null || label_id.Text != "0")
             {
-                _hotel.Id_hotel = int.Parse(label_id.Text);
-                _hotel.Adresa = textBoxEdit_AdresaHotel.ToString();
-                _hotel.Naziv = textBoxEdit_nazivHotel.ToString();
 
+                _hotel.Id_hotel = Convert.ToInt16(label_id.Text);
+                _hotel.Adresa = textBoxEdit_AdresaHotel.Text;
+                _hotel.Naziv = textBoxEdit_nazivHotel.Text;
                 _context.UpdateHotel(_hotel);
-            
-               
+                LoadGrid();
             }
 
             else
@@ -108,6 +107,44 @@ namespace Hoteli_booking_KOR
 
 
 
+        }
+
+
+
+        //brisanje hotela
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _hotel.Id_hotel = Convert.ToInt16(label_id.Text);
+
+            
+            if (_ass.GetRooms(_hotel.Id_hotel) > 0)
+            {
+                DialogResult dijalogAkcijaBrisanje = MessageBox.Show("Ima više soba, obrisat će te hoteli više soba","jj", MessageBoxButtons.YesNo);
+                if(dijalogAkcijaBrisanje == DialogResult.Yes)
+                {
+                    _ass.DeleteHotel(_hotel.Id_hotel, 1);
+                    LoadGrid();
+                }
+
+                else if(dijalogAkcijaBrisanje == DialogResult.No)
+                {
+                         //PIPREMA ZA GOSTE
+                      //  _ass.DeleteHotel(_hotel.Id_hotel, 0);
+                 }
+            }
+
+            else
+            {
+               
+            }
+        }
+
+        private void unesiSobeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sobecs sobe = new Sobecs();
+            sobe.Show();
+            this.Close();
+            
         }
     }
 }

@@ -56,11 +56,11 @@
             // 
             // button_gost
             // 
-            this.button_gost.Location = new System.Drawing.Point(757, 205);
+            this.button_gost.Location = new System.Drawing.Point(757, 204);
             this.button_gost.Name = "button_gost";
             this.button_gost.Size = new System.Drawing.Size(245, 125);
             this.button_gost.TabIndex = 2;
-            this.button_gost.Text = "GOST (manager)";
+            this.button_gost.Text = " ";
             this.button_gost.UseVisualStyleBackColor = true;
             // 
             // label_kon
@@ -81,7 +81,7 @@
             this.Controls.Add(this.button_sobe);
             this.Controls.Add(this.button1_hotel);
             this.Name = "Form1";
-            this.Text = "Hotel Igor";
+            this.Text = "Hotel Igor V.1.0";
             this.ResumeLayout(false);
             this.PerformLayout();
 

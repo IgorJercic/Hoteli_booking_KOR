@@ -16,7 +16,7 @@ namespace DatabaseLogic
 
 
 
-        ////DVD Games
+   
         public IEnumerable<HotelC> IEHotel
         {
 
@@ -70,10 +70,6 @@ namespace DatabaseLogic
         }
 
 
-
-
-
-
         public void NewHotel(HotelC hotel)
         {
 
@@ -116,6 +112,7 @@ namespace DatabaseLogic
             {
 
                 SqlCommand com = new SqlCommand(sql, conn);
+                com.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter paraIdHotel = new SqlParameter();
                 paraIdHotel.ParameterName = "@id";
@@ -141,7 +138,9 @@ namespace DatabaseLogic
             }
         }
 
-        //Sobe 
+
+
+        ////Sobe 
 
         public IEnumerable<Sobe> IESobe
         {
@@ -178,6 +177,7 @@ namespace DatabaseLogic
             }
 
         }
+
 
         public void NewSoba(Sobe sobe)
         {

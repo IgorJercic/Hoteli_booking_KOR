@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1_editHotel = new System.Windows.Forms.Panel();
+            this.button_izmjena = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxEdit_AdresaHotel = new System.Windows.Forms.TextBox();
             this.textBoxEdit_nazivHotel = new System.Windows.Forms.TextBox();
@@ -41,15 +42,20 @@
             this.textBoxNazivHotel = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button_hotelUnos = new System.Windows.Forms.Button();
-            this.button_izmjena = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.unesiSobeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1_editHotel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1_editHotel
             // 
             this.panel1_editHotel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1_editHotel.Controls.Add(this.button1);
             this.panel1_editHotel.Controls.Add(this.button_izmjena);
             this.panel1_editHotel.Controls.Add(this.label2);
             this.panel1_editHotel.Controls.Add(this.textBoxEdit_AdresaHotel);
@@ -60,6 +66,16 @@
             this.panel1_editHotel.Name = "panel1_editHotel";
             this.panel1_editHotel.Size = new System.Drawing.Size(318, 258);
             this.panel1_editHotel.TabIndex = 0;
+            // 
+            // button_izmjena
+            // 
+            this.button_izmjena.Location = new System.Drawing.Point(48, 195);
+            this.button_izmjena.Name = "button_izmjena";
+            this.button_izmjena.Size = new System.Drawing.Size(100, 41);
+            this.button_izmjena.TabIndex = 5;
+            this.button_izmjena.Text = "Potvrdi izmjenu";
+            this.button_izmjena.UseVisualStyleBackColor = true;
+            this.button_izmjena.Click += new System.EventHandler(this.button_izmjena_Click);
             // 
             // label2
             // 
@@ -165,24 +181,53 @@
             this.button_hotelUnos.UseVisualStyleBackColor = true;
             this.button_hotelUnos.Click += new System.EventHandler(this.button_hotelUnos_Click);
             // 
-            // button_izmjena
+            // button1
             // 
-            this.button_izmjena.Location = new System.Drawing.Point(88, 195);
-            this.button_izmjena.Name = "button_izmjena";
-            this.button_izmjena.Size = new System.Drawing.Size(100, 41);
-            this.button_izmjena.TabIndex = 5;
-            this.button_izmjena.Text = "Potvrdi izmjenu";
-            this.button_izmjena.UseVisualStyleBackColor = true;
-            this.button_izmjena.Click += new System.EventHandler(this.button_izmjena_Click);
+            this.button1.Location = new System.Drawing.Point(165, 195);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 41);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Brisi hotel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(113, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(204, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Oznaći mišem za izmjenu podataka hotela";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.unesiSobeToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(989, 24);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // unesiSobeToolStripMenuItem
+            // 
+            this.unesiSobeToolStripMenuItem.Name = "unesiSobeToolStripMenuItem";
+            this.unesiSobeToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.unesiSobeToolStripMenuItem.Text = "Unesi Sobe";
+            this.unesiSobeToolStripMenuItem.Click += new System.EventHandler(this.unesiSobeToolStripMenuItem_Click);
             // 
             // Hotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(989, 588);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1_editHotel);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Hotel";
             this.Text = "Hotel";
             this.panel1_editHotel.ResumeLayout(false);
@@ -190,7 +235,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -210,5 +258,9 @@
         private System.Windows.Forms.TextBox textBoxAdresa;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button_izmjena;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem unesiSobeToolStripMenuItem;
     }
 }
