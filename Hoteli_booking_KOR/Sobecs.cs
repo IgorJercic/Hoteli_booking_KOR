@@ -27,6 +27,10 @@ namespace Hoteli_booking_KOR
             LoadHoteli();
             LoadGrid();
 
+         
+            LoadHoteli();
+            LoadGrid();
+
         }
 
         private void LoadGrid()
@@ -55,6 +59,7 @@ namespace Hoteli_booking_KOR
         private void button_hotelUnos_Click(object sender, EventArgs e)
         {
 
+<<<<<<< HEAD
             if (textBox_BrojSobe.Text != null || comboBox_TipSobe.SelectedValue != null || comboBox_Hotel.SelectedValue != null)
             {
              
@@ -70,7 +75,24 @@ namespace Hoteli_booking_KOR
                     _context.NewSoba(_sobe);
                     LoadGrid();
                 }
+=======
+            if (textBoxEdit_BrojSobe != null || comboBox_TipSobe.SelectedValue != null || comboBox_Hotel.SelectedValue != null)
+            {
 
+
+                // _sobe.BrojSobe = int.Parse(textBoxEdit_BrojSobe.Text);
+                _sobe.BrojSobe = 1;
+                _sobe.Fk_Hotel = 1;
+                _context.NewSoba(_sobe);
+                LoadGrid();
+            }
+
+            else
+            {
+                MessageBox.Show("Niste odabrali polje za unos");
+>>>>>>> 9800b4e9a2933ec8936b4bb7be054d052b0263a4
+
+            }
 
             }
 
@@ -94,6 +116,105 @@ namespace Hoteli_booking_KOR
             {
                 comboBox_TipSobe.Items.Add(item);
                 
+<<<<<<< HEAD
+=======
+            }
+
+            //comboBox_TipSobe.ValueMember = _ass.TipSobe.ToString();
+        }
+
+
+
+        private void LoadHoteli()
+        {
+            HotelC _newHotel = new HotelC();
+
+            string sqlUpit = "select ID_Hotel, naziv from t_Hotel order by ID_Hotel asc";
+            List<HotelC> hotelList = new List<HotelC>();
+
+            using (SqlConnection conn = new SqlConnection(_konekcija.KonkcijskiString_Lokal))
+            {
+
+                SqlCommand com = new SqlCommand(sqlUpit, conn);
+                conn.Open();
+                SqlDataReader rdr = com.ExecuteReader();
+
+
+
+
+                while (rdr.Read())
+                {
+
+                    //_newHotel.Id_hotel = Convert.ToInt16(rdr["ID_Hotel"]);
+                    _newHotel.Naziv = rdr["naziv"].ToString();
+
+                    hotelList.Add(_newHotel);
+                    foreach (var item in hotelList)
+                    {
+                        comboBox_Hotel.Items.Add(item.Naziv);
+                    }
+                }
+             
+
+                //    while (rdr.Read())
+                //    {
+
+                //        _newHotel.Id_hotel = Convert.ToInt16(rdr["ID_Hotel"]);
+                //        _newHotel.Naziv = rdr["naziv"].ToString();
+                //        hotelList.Add(_newHotel);
+
+                //        comboBox_Hotel.DataSource = hotelList;
+                //        comboBox_Hotel.DisplayMember = rdr["naziv"].ToString();
+                //        comboBox_Hotel.ValueMember = "ID_Hotel";
+
+
+                //}
+
+                rdr.Close();
+                conn.Close();
+                conn.Dispose();
+
+            }
+            
+        }
+
+
+
+
+
+
+       
+
+        private void comboBox_TipSobe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBox_TipSobe.Items != null)
+            {
+                _sobe.TipSobe = comboBox_TipSobe.SelectedItem.ToString();
+               // MessageBox.Show("" + _sobe.TipSobe);
+            }
+        }
+
+        private void comboBox_Hotel_Click(object sender, EventArgs e)
+        {
+            if (comboBox_Hotel.Items != null)
+            {
+
+                if (comboBox_Hotel.SelectedValue != null)
+                {
+                    // int br = Convert.ToInt16(comboBox_Hotel.SelectedValue.ToString());
+                    string tk = comboBox_Hotel.SelectedValue.ToString();
+
+                    _sobe.Fk_Hotel = Convert.ToInt16(tk);
+                    //jebe peru mater
+                    // MessageBox.Show("" + comboBox_Hotel.SelectedValue.ToString().GetType());
+                    // MessageBox.Show("Hotel" +  _sobe.Fk_Hotel);
+                    // https://stackoverflow.com/questions/4018114/read-data-from-sqldatareader
+                    // https://stackoverflow.com/questions/23561375/objects-from-database-to-fill-list
+                    //https://stackoverflow.com/questions/46484454/populate-textbox-with-id-column-of-related-selected-value-from-combo-box
+                }
+
+
+>>>>>>> 9800b4e9a2933ec8936b4bb7be054d052b0263a4
             }
         }
 

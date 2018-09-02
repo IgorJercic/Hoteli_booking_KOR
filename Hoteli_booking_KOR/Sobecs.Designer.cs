@@ -37,8 +37,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button_hotelUnos = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+<<<<<<< HEAD
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.hoteliToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+=======
+            this.panel1_editHotel.SuspendLayout();
+>>>>>>> 9800b4e9a2933ec8936b4bb7be054d052b0263a4
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -74,7 +78,12 @@
             this.comboBox_Hotel.Name = "comboBox_Hotel";
             this.comboBox_Hotel.Size = new System.Drawing.Size(121, 21);
             this.comboBox_Hotel.TabIndex = 6;
+<<<<<<< HEAD
             this.comboBox_Hotel.SelectedIndexChanged += new System.EventHandler(this.comboBox_Hotel_SelectedIndexChanged);
+=======
+          //  this.comboBox_Hotel.SelectedIndexChanged += new System.EventHandler(this.comboBox_Hotel_SelectedIndexChanged);
+            this.comboBox_Hotel.Click += new System.EventHandler(this.comboBox_Hotel_Click);
+>>>>>>> 9800b4e9a2933ec8936b4bb7be054d052b0263a4
             // 
             // comboBox_TipSobe
             // 
@@ -128,6 +137,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(635, 230);
             this.dataGridView1.TabIndex = 4;
             // 
+<<<<<<< HEAD
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -145,6 +155,8 @@
             this.hoteliToolStripMenuItem.Text = "Hoteli";
             this.hoteliToolStripMenuItem.Click += new System.EventHandler(this.hoteliToolStripMenuItem_Click);
             // 
+=======
+>>>>>>> 9800b4e9a2933ec8936b4bb7be054d052b0263a4
             // Sobecs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

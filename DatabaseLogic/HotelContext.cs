@@ -179,6 +179,10 @@ namespace DatabaseLogic
         }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9800b4e9a2933ec8936b4bb7be054d052b0263a4
         public void NewSoba(Sobe sobe)
         {
 

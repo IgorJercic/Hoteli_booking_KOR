@@ -6,7 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Sql;
+<<<<<<< HEAD
 //using System.Data.SqlClient;
+=======
+>>>>>>> 9800b4e9a2933ec8936b4bb7be054d052b0263a4
 
 
 using DatabaseLogic;
@@ -31,7 +34,11 @@ namespace Hoteli_booking_KOR
 
 
 
+<<<<<<< HEAD
         //konstruktor
+=======
+
+>>>>>>> 9800b4e9a2933ec8936b4bb7be054d052b0263a4
         public Assits()
         {
 
@@ -43,6 +50,7 @@ namespace Hoteli_booking_KOR
         }
 
 
+<<<<<<< HEAD
         //provjeravai sprećavada nema duplih soba u Hotelu, misli se na broj sobe
         public int CheckRoomNumber(int soba, int hotel)
         {
@@ -85,6 +93,10 @@ namespace Hoteli_booking_KOR
 
 
         }
+=======
+
+
+>>>>>>> 9800b4e9a2933ec8936b4bb7be054d052b0263a4
 
         public int CheckHotelDuplicate(string naziv, string adresa)
         {
